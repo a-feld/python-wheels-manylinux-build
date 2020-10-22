@@ -19,6 +19,9 @@ if [ ! -z "$PRE_BUILD_COMMAND" ]; then
     $PRE_BUILD_COMMAND || { echo "Pre-build command failed."; exit 1; }
 fi
 
+env
+exit
+
 # Compile wheels
 arrPY_VERSIONS=(${PY_VERSIONS// / })
 for PY_VER in "${arrPY_VERSIONS[@]}"; do
